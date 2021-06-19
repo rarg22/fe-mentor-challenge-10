@@ -1,0 +1,149 @@
+:root {
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  padding: 0rem;
+  margin: 0rem;
+}
+
+.page_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #b068e9 0%, #6463e7 100%);
+}
+
+.main_container {
+  width: 100%;
+  height: 100%;
+}
+
+.main_illustration {
+  width: 26.6rem;
+  height: 19.6rem;
+  position: relative;
+  margin-top: -13.5rem;
+  z-index: 1;
+  background-image: url("images/illustration-woman-online-mobile.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main_illustration::after {
+	content: "";
+	position: absolute;
+	width: 300%;
+	height: 300%;
+	top: 38%;
+	left: -5%;
+	transform: scale(0.85);
+	background-image: url("images/bg-pattern-mobile.svg");
+	background-repeat: no-repeat;
+	z-index: 9999;
+  pointer-events: none;
+}
+
+.faq_card {
+  width: 75%;
+  margin: -8rem auto;
+  border-radius: 2.3rem;
+  padding: 2.4rem;
+  background-color: white;
+}
+
+.faq_content > h1 {
+  margin-top: 2.5rem;
+  margin-bottom: 3.8rem;
+  font-size: 3.2rem;
+  text-align: center;
+}
+
+.faqs {
+  padding: 0rem;
+  padding-bottom: 4.8rem;
+  list-style: none;
+}
+
+.faq {
+  position: relative;
+  border-bottom: 1px solid #e8e8ea;
+}
+
+.faq_question {
+  font-size: 1.3rem;
+}
+
+.faq_answer {
+  font-size: 1.2rem;
+}
+
+.faq::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background-image: url("images/icon-arrow-down.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 0.25rem;
+  right: 0%;
+  cursor: pointer;
+  position: absolute;
+  transition: transform 0.1s ease-in;
+}
+
+.faq:not(.collapsed)::before {
+  transform: rotateX(180deg);
+}
+
+.faq:not(.collapsed) > .faq_question {
+  font-weight: bold;
+}
+
+.faq > .faq_question {
+  color: #4b4c5f;
+}
+
+.faq > .faq_question:hover {
+  color: #f47b56;
+  cursor: pointer;
+}
+
+.faq_answer {
+  pointer-events: none;
+}
+
+.faq > .faq_answer {
+  color: #787887;
+  position: relative;
+  opacity: 1;
+  transform: translateY(0rem);
+  transition: opacity 0.3s ease-in, transform 0.1s ease-in;
+}
+
+.faq.collapsed > .faq_answer {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(-3rem);
+  transition: none;
+}
+
+@media all and (min-width: 1440px) {
+  .page_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main_container {
+    display: flex;
+    max-width: 50%;
+  }
+}
